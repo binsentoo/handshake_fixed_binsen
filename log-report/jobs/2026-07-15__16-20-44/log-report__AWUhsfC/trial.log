@@ -1,0 +1,17 @@
+Skipping image OS validation for hb__26adbeabbf60ce4a39256f13c53b1075: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+  File "/Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1025, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1010, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+  File "/Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__awuhsfc__env --project-directory /Users/vdphan/Downloads/log-report/environment -f /private/var/folders/x3/67th6nd100v_52sdxd81bvjc0000gn/T/tmp6pbkshka/log-report__AWUhsfC__env-docker-compose-resources.json -f /Users/vdphan/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/x3/67th6nd100v_52sdxd81bvjc0000gn/T/tmph7yf40mn/docker-compose-mounts.json cp main:/app/report.json jobs/2026-07-15__16-20-44/log-report__AWUhsfC/artifacts/app/report.json. Return code: 1. Stdout:  log-report__awuhsfc__env-main-1 Copying log-report__awuhsfc__env-main-1:/app/report.json to jobs/2026-07-15__16-20-44/log-report__AWUhsfC/artifacts/app/report.json
+Error response from daemon: Could not find the file /app/report.json in container f9d6a8d298e0bc7552a7f6fbf51dac3f478103f845d702bd0be7e7143343e1a0
+. Stderr: None. 

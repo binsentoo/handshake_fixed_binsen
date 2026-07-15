@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+../tests/test_outputs.py .F..                                            [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_total_requests_correct __________________________
+
+    def test_total_requests_correct():
+        """Criterion 2: total_requests is an integer count of all non-empty log lines."""
+        data = json.loads(REPORT_PATH.read_text())
+        expected = _expected()
+>       assert data.get("total_requests") == expected["total_requests"], (
+            f"total_requests: expected {expected['total_requests']}, got {data.get('total_requests')}"
+        )
+E       AssertionError: total_requests: expected 6, got 1006
+E       assert 1006 == 6
+E        +  where 1006 = <built-in method get of dict object at 0xffff9d16e1c0>('total_requests')
+E        +    where <built-in method get of dict object at 0xffff9d16e1c0> = {'top_path': '/index.html', 'total_requests': 1006, 'unique_ips': 3}.get
+
+/tests/test_outputs.py:35: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_report_exists_and_valid_json
+PASSED ../tests/test_outputs.py::test_unique_ips_correct
+PASSED ../tests/test_outputs.py::test_top_path_correct
+FAILED ../tests/test_outputs.py::test_total_requests_correct - AssertionError...
+========================= 1 failed, 3 passed in 0.01s ==========================

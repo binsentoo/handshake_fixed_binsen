@@ -1,0 +1,5 @@
+Skipping image OS validation for hb__26adbeabbf60ce4a39256f13c53b1075: docker inspect returned 1
+Collecting main service artifacts
+Trial log-report__EwxmrRd failed: No reward file found at jobs/2026-07-15__16-15-53/log-report__EwxmrRd/verifier/reward.txt or jobs/2026-07-15__16-15-53/log-report__EwxmrRd/verifier/reward.json
+Exception RewardFileNotFoundError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
